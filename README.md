@@ -7,3 +7,11 @@ The example contains the callbacks used, also it contains the two different opti
 We found for the model SGD seemed to give higher accuracies. As we can see while training we found 100% training accuracy and validation accuracy of about 81%
 After compiling the model we fit the model on the train batches for 10 epochs (may vary according to the choice of parameters of the user), using the callbacks discussed above.
 The word_dict is the dictionary containing label names for the various labels predicted.
+3. Predict the gesture
+In this, we create a bounding box for detecting the ROI and calculate the accumulated_avg as we did in creating the dataset. This is done for identifying any foreground object.
+Now we find the max contour and if contour is detected that means a hand is detected so the threshold of the ROI is treated as a test image.
+We load the previously saved model using keras.models.load_model and feed the threshold image of the ROI consisting of the hand as an input to the model for prediction.
+Getting the necessary imports for model_for_gesture.py
+Now we load the model that we had created earlier and set some of the variables that we need, i.e, initializing the background variable, and setting the dimensions of the ROI. getting the max contours and the thresholded image of the hand detected.
+Summary
+We have successfully developed sign language detection project. This is an interesting machine learning python project to gain expertise. This can be further extended for detecting the English alphabets.
